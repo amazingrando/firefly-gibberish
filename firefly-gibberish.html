@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html class="no-js wf-inactive" lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Firefly Mechanical Gibberish</title>
+  <meta name="description" content="A script that provides you with fast Firefly gibberish for when the ship's in disrepair.">
+    	
+	<!-- jQuery -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="libraries/jquery/jquery.min.js"><\/script>')</script>
+
+	<script>
+	$(document).ready(function () {
+		var engine = {
+			adjective : [
+				"compression","magnetic","electric","coolant","resonant","heat","fuel","lubricant","thermal","gravitic","nuclear","quantum"
+			],
+			noun : [
+				"coil","throttle","gear","turbine","feeder","generator","pressurizer","exchanger","catalyst","actuator","thrusters","exhaust"
+			], 
+			verb : [
+				"discharging","leaking","grinding","overheating","shaking","clogging","radiating","bending","shuddering","seizing","shifting","deviating"
+			]
+		};
+
+		var hull = {
+			adjective : [
+				"steel","composite","airlock","engine","cargo","jeffries","scarf","engine","port","starboard","fore","aft"
+			],
+			noun : [
+				"coupling","pylon","ring","fork","bulkhead","mount","casing","frame","jacket","tube","plate","door"
+			],
+			verb : [
+				"bending","snapping","bulging","cracking","breaking","sagging","oxidizing","twisting","tearing","fracturing","splitting","ablating"
+			]
+		};
+
+		var systems = {
+			adjective : [
+				"oxygen","weapons","communications","waste","carbon","heat","water","sensor","electrical","gravity","visual","hydraulic"
+			],
+			noun : [
+				"exchanger","computer","lubricant","antenna","dioxide","radiator","purifier","recycler","relay","generator","wires","tubes"
+			],
+			verb : [
+				"leaking","sparking","fluctuating","crashing","eliminator spraying","deviating","arcing","scorching","hesitating","oscillating","ghosting","vibrating",
+			]
+		};
+
+		var output = $('.speak');
+		var adj, noun, verb;
+
+		function random_selection_from_array(t) {
+			return t[Math.floor(Math.random() * t.length)];
+		}
+
+		$('.trigger').click(function(e) {
+			e.preventDefault();
+			var target = $(this).data('type');
+			
+			if (target == "engine") {
+				adj = random_selection_from_array(engine.adjective);
+				noun = random_selection_from_array(engine.noun);
+				verb = random_selection_from_array(engine.verb);
+			} else if (target == "hull") {
+				adj = random_selection_from_array(hull.adjective);
+				noun = random_selection_from_array(hull.noun);
+				verb = random_selection_from_array(hull.verb);
+			} else if (target == "systems") {
+				adj = random_selection_from_array(systems.adjective);
+				noun = random_selection_from_array(systems.noun);
+				verb = random_selection_from_array(systems.verb);
+			}
+
+			$(output).text(adj + " " + noun + " is " + verb);
+
+		});
+		});
+		</script>
+
+		<style>
+			body { padding: 1em; }
+			.wrapper { max-width: 900px; margin: 0 auto; }
+			.speak { color: tomato; }
+
+			.btn {
+				border-radius: 5px;
+			}
+		</style>
+</head>
+<body>
+
+	<div class="wrapper">
+		<h1>Firefly Mechanical Gibberish</h1>
+
+		<h2 class="speak">...</h2>
+
+		<br>
+
+		<a href="#" data-type=engine class="trigger btn btn-primary">Engine</a>
+		<a href="#" data-type=hull class="trigger btn btn-primary">Hull</a>
+		<a href="#" data-type=systems class="trigger btn btn-primary">Systems</a>
+	</div>
+
+</body>
+</html>
