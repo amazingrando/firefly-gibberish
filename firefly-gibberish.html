@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js wf-inactive" lang="en" dir="ltr">
+<html lang="en" dir="ltr">
 <head>
 	<meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,8 +9,9 @@
   <meta name="description" content="A script that provides you with fast Firefly gibberish for when the ship's in disrepair.">
     	
 	<!-- jQuery -->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="libraries/jquery/jquery.min.js"><\/script>')</script>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
 	<script>
 	$(document).ready(function () {
@@ -82,19 +83,15 @@
 		</script>
 
 		<style>
-			body { padding: 1em; }
-			.wrapper { max-width: 900px; margin: 0 auto; }
 			.speak { color: tomato; }
-
-			.btn {
-				border-radius: 5px;
-			}
 		</style>
 </head>
 <body>
-
-	<div class="wrapper">
-		<h1>Firefly Mechanical Gibberish</h1>
+	<div class="container-fluid">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h1>Firefly Mechanical Gibberish</h1>
 
 		<h2 class="speak">...</h2>
 
@@ -103,6 +100,9 @@
 		<a href="#" data-type=engine class="trigger btn btn-primary">Engine</a>
 		<a href="#" data-type=hull class="trigger btn btn-primary">Hull</a>
 		<a href="#" data-type=systems class="trigger btn btn-primary">Systems</a>
+				</div>
+			</div>
+		</div>
 	</div>
 
 </body>
